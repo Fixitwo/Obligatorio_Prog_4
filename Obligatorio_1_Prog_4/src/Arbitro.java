@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+
 public class Arbitro extends Persona{
     private int cantPartDir;
+    private static ArrayList<Arbitro> ListaArbitro;
+
 
     //Metodos de Acceso
     public int getCantPartDir(){

@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+
 public class Tecnico extends Persona{
     private String equipo;
+    private static ArrayList<Tecnico> ListaTecnico;
+
 
     //Metodos de acceso
     public String getEquipo(){

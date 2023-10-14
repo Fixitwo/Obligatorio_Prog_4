@@ -1,8 +1,11 @@
+import java.util.ArrayList;
+
 public class Jugador extends Persona{
 
     private int pos;
     private String equipo;
     private int cantMinJug;
+    private static ArrayList<Jugador> ListaJugadores;
 
     //Metodos de Acceso
 
