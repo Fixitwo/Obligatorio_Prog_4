@@ -1,15 +1,26 @@
+package Model;
+
 import java.util.ArrayList;
 
 public class Equipo {
+    private int id;
     private String nombre;
     private Tecnico tecnico;
-    private static ArrayList<Equipo> ListaEquipo;
+    private static ArrayList<Equipo> ListaEquipo = new ArrayList<>();
     private Jugador[] jugadorTitulares = new Jugador[5];
     private Jugador[] suplentes = new Jugador[2];
 
     //constructor
     public Equipo(String nombre) {
         this.nombre = nombre;
+    }
+
+    //Id
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
 
     //Nombre
@@ -24,16 +35,23 @@ public class Equipo {
         return false;
     }
 
+    //ListaEquipo
+    public static ArrayList<Equipo> getListaEquipo(){
+        return ListaEquipo;
+    }
+    public static void setUnaListaEquipo(ArrayList<Equipo> listasEquipo) {
+        ListaEquipo = listasEquipo;
+    }
+    public static void setListaEquipo(Equipo listaEquipo) {
+        ListaEquipo.add(listaEquipo);
+    }
+
     //Tecnico
     public Tecnico getTecnico() {
         return tecnico;
     }
-    public boolean setTecnico(Tecnico tecnico) {
-        if (this.tecnico == null){
-            this.tecnico = tecnico;
-            return true;
-        }
-        return false;
+    public void setTecnico(Tecnico tecnico) {
+        this.tecnico = tecnico;
     }
 
     //jugador
@@ -64,18 +82,5 @@ public class Equipo {
         return false;
     }
 
-    //CRUD
-    public void alta(){
-        System.out.println("Alta");
-    }
-    public void baja(){
-        System.out.println("Baja");
-    }
-    public void modificar(){
-        System.out.println("modificar");
-    }
-    public void leer(){
-        System.out.println("leer");
-    }
 
 }

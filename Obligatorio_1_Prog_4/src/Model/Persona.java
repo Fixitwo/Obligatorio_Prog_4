@@ -1,3 +1,5 @@
+package Model;
+
 public abstract class Persona {
     private int ci;
     private String nombre;
@@ -33,12 +35,5 @@ public abstract class Persona {
         this.nombre=nombre;
         this.apellido=apellido;
     }
-
-    //Metodos y Funiones
-
-    public abstract void alta();
-    public abstract void baja();
-    public abstract void modificar();
-    public abstract void leer();
 
 }
