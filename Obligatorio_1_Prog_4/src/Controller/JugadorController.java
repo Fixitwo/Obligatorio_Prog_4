@@ -10,7 +10,6 @@ public class JugadorController {
     public static void alta(Jugador unJ){
         unJ.setId(Jugador.getListaJugador().size());
         Jugador.setListaJugador(unJ);
-
     }
     public static void baja(int id){
 
