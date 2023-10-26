@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Arbitro extends Persona{
     private int cantPartDir;
+    private int aniosTrabj;
     private static ArrayList<Arbitro> ListaArbitro = new ArrayList<>();
 
 
@@ -37,4 +38,11 @@ public class Arbitro extends Persona{
     }
 
 
+    public int getAniosTrabj() {
+        return aniosTrabj;
+    }
+
+    public void setAniosTrabj(int aniosTrabj) {
+        this.aniosTrabj = aniosTrabj;
+    }
 }

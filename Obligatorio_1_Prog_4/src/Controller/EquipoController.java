@@ -52,19 +52,19 @@ public class EquipoController {
         Jugador[] lista = unE.getJugadorTitulares();
         for (Jugador a : lista) {
             if(a != null){
-                System.out.println(a.getId()+" "+ a.getNombre());
+                System.out.println(a.getId()+ " " + a.getCi() +" "+ a.getNombre() + " " + a.getApellido() + " " + a.getPos() +" " + a.getCantMinJug());
             }
 
         }
     }
+
     public static void leerSuplentes(Equipo unE){
 
         Jugador[] lista = unE.getSuplentes();
         for (Jugador a : lista) {
             if(a != null){
-                System.out.println(a.getId()+" "+ a.getNombre());
+                System.out.println(a.getId()+ " " + a.getCi() +" "+ a.getNombre() + " " + a.getApellido() + " " + a.getPos() +" " + a.getCantMinJug());
             }
-
         }
     }
     public static Equipo Encontrar(int id){

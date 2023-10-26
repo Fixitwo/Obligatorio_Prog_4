@@ -34,6 +34,13 @@ public class JugadorController {
             System.out.println(a.getId()+" "+ a.getNombre());
         }
     }
+    public static void leerConsulta(){
+        ArrayList<Jugador> lista = Jugador.getListaJugador();
+
+        for (Jugador a : lista) {
+            System.out.println(a.getId()+ " " + a.getCi() +" "+ a.getNombre() + " " + a.getApellido() + " " + a.getPos() +" " + a.getCantMinJug());
+        }
+    }
     public static Jugador Encontrar(int id){
         ArrayList<Jugador> lista = Jugador.getListaJugador();
 

@@ -18,7 +18,7 @@ public class Main {
             System.out.println("2: CRUD Tecnico");
             System.out.println("3: CRUD Arbitro");
             System.out.println("4: CRUD Partido");
-            System.out.println("5: Otros");
+            System.out.println("5: Consultas");
             System.out.println("6: Salir");
             try {
                 int siguiente = s.nextInt();
@@ -38,7 +38,7 @@ public class Main {
                     PartidoCRUD();
                 }
                 if(siguiente == 5){
-                    System.out.println("No disponible por ahora ");
+                    Consultas();
                 }
                 if(siguiente == 6){
                     break;
@@ -222,6 +222,43 @@ public class Main {
                 if (siguiente == 4) {
                     break;
                 }
+
+
+            } catch (Exception e) {
+                System.out.println("Comando desconocido ");
+            }
+        }
+    }
+    public static void Consultas() {
+        Scanner s = new Scanner(System.in);
+        int siguiente;
+
+        while (true) {
+            System.out.println("Que desea realizar? ");
+            try {
+                System.out.println("0: Ver todos los jugadores");
+                System.out.println("1: Ver todos los jugadores de un equipo");
+                System.out.println("2: Mostrar arbitro de un partido");
+                System.out.println("3: Ver Partidos");
+                System.out.println("4: Precalentamiento");
+                System.out.println("5: Ver salarios");
+                System.out.println("6: Salir al menu");
+                siguiente = s.nextInt();
+                if (siguiente == 0) {
+                    ConsultasView.listadoJugadores();
+                }
+                if (siguiente == 1) {
+                    ConsultasView.jugadoresXEquipo();
+                }
+//                if (siguiente == 2) {
+//                    TecnicoViewCRUD.ModificarView();
+//                }
+//                if (siguiente == 3) {
+//                    TecnicoViewCRUD.LeerView();
+//                }
+//                if (siguiente == 4) {
+//                    break;
+//                }
 
 
             } catch (Exception e) {
