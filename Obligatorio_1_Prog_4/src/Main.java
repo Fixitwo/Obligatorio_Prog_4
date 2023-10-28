@@ -238,11 +238,13 @@ public class Main {
             try {
                 System.out.println("0: Ver todos los jugadores");
                 System.out.println("1: Ver todos los jugadores de un equipo");
-                System.out.println("2: Mostrar arbitro de un partido");
-                System.out.println("3: Ver Partidos");
-                System.out.println("4: Precalentamiento");
-                System.out.println("5: Ver salarios");
-                System.out.println("6: Salir al menu");
+                System.out.println("2: Ver sueldo con prima de los jugadores");
+                System.out.println("3: Ver sueldo con prima de los arbitros");
+                System.out.println("4: Ver sueldo con prima de los tecnicos");
+                System.out.println("5: Mostrar arbitro de un partido");
+                System.out.println("6: Ver Partidos");
+                System.out.println("7: Precalentamiento");
+                System.out.println("8: Salir al menu");
                 siguiente = s.nextInt();
                 if (siguiente == 0) {
                     ConsultasView.listadoJugadores();
@@ -250,15 +252,27 @@ public class Main {
                 if (siguiente == 1) {
                     ConsultasView.jugadoresXEquipo();
                 }
-//                if (siguiente == 2) {
-//                    TecnicoViewCRUD.ModificarView();
-//                }
-//                if (siguiente == 3) {
-//                    TecnicoViewCRUD.LeerView();
-//                }
-//                if (siguiente == 4) {
-//                    break;
-//                }
+                if (siguiente == 2) {
+                    ConsultasView.sueldoTotalJugador();
+                }
+                if (siguiente == 3) {
+                    ConsultasView.sueldoTotalArbitro();
+                }
+                if (siguiente == 4) {
+                    ConsultasView.sueldoTotalTecnico();
+                }
+                if (siguiente == 5) {
+                    ConsultasView.arbitroXPartido();
+                }
+                if (siguiente == 6) {
+                    ConsultasView.verTodosLosPartidos();
+                }
+                if (siguiente == 7) {
+                    ConsultasView.precalentamiento();
+                }
+                if (siguiente == 8) {
+                    break;
+                }
 
 
             } catch (Exception e) {

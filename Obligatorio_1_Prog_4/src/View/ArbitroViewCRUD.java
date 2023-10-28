@@ -11,9 +11,7 @@ public class ArbitroViewCRUD {
         String nombre;
         String apellido;
         int cantPartDir;
-        int aniosTrabaj;
-        int sueldo;
-
+        int aniosTrabj
 
         while (true) {
             try {
@@ -35,15 +33,11 @@ public class ArbitroViewCRUD {
                 Scanner d = new Scanner(System.in);
                 cantPartDir = d.nextInt();
 
-                System.out.println("\nCantidad de años trabajados: ");
+                System.out.println("\nAños Trabajados: ");
                 Scanner e = new Scanner(System.in);
-                aniosTrabaj = e.nextInt();
+                aniosTrabj = e.nextInt();
 
-                System.out.println("\nCantidad de años trabajados: ");
-                Scanner f = new Scanner(System.in);
-                sueldo = f.nextInt();
-
-                Arbitro unA = new Arbitro(ci, nombre, apellido, cantPartDir,aniosTrabaj,sueldo);
+                Arbitro unA = new Arbitro(ci, nombre, apellido, cantPartDir, aniosTrabj);
 
                 System.out.println("Esta de acuardo con estos datos? (1:no|0:si)");
                 Scanner s = new Scanner(System.in);
@@ -89,7 +83,6 @@ public class ArbitroViewCRUD {
         String apellido;
         int cantPartDir;
         int aniosTrabaj;
-        int sueldo;
         Scanner s = new Scanner(System.in);
 
         while (true) {
@@ -118,15 +111,11 @@ public class ArbitroViewCRUD {
                 Scanner d = new Scanner(System.in);
                 cantPartDir = d.nextInt();
 
-                System.out.println("\nCantidad de años trabajados: ");
+                System.out.println("\nAños trabajados: ");
                 Scanner e = new Scanner(System.in);
                 aniosTrabaj = e.nextInt();
 
-                System.out.println("\nCantidad de partidos dirigidos: ");
-                Scanner f = new Scanner(System.in);
-                sueldo = f.nextInt();
-
-                Arbitro unA = new Arbitro(newCi, nombre, apellido, cantPartDir, aniosTrabaj, sueldo);
+                Arbitro unA = new Arbitro(newCi, nombre, apellido, cantPartDir,aniosTrabaj);
 
                 System.out.println("Esta de acuardo con los datos? (1:no|0:si)");
                 int salir = s.nextInt();
@@ -138,10 +127,7 @@ public class ArbitroViewCRUD {
             } catch (Exception e) {
                 System.out.println("Error al crear, incerte de nuevo los datos "+ e);
             }
-
         }
-
-
     }
     public static void LeerView(){
         Scanner s = new Scanner(System.in);

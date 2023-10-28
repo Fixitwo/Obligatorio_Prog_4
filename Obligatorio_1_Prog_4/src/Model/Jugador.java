@@ -7,7 +7,8 @@ public class Jugador extends Persona{
     private int id;
     private int pos;
     private int cantMinJug;
-    private int sueldo;
+    private int sueldoBase=1000000;
+    private int sueldoPrima;
     private static ArrayList<Jugador> ListaJugadores = new ArrayList<>();
 
     //Metodos de Acceso
@@ -38,13 +39,7 @@ public class Jugador extends Persona{
     public void setPos(int pos){
         this.pos=pos;
     }
-    public int getSueldo() {
-        return sueldo;
-    }
 
-    public void setSueldo(int sueldo) {
-        this.sueldo = sueldo;
-    }
 
     //Cantidad minutos jugados
     public int getCantMinJug(){
@@ -55,10 +50,25 @@ public class Jugador extends Persona{
     }
 
     //Constructor
-    public Jugador(int ci, String nombre, String apellido, int pos, int cantMinJug,int sueldo){
+    public Jugador(int ci, String nombre, String apellido, int pos, int cantMinJug){
         super(ci, nombre, apellido);
         this.pos=pos;
         this.cantMinJug=cantMinJug;
-        this.sueldo=sueldo;
+    }
+
+    public int getSueldoBase() {
+        return sueldoBase;
+    }
+
+    public void setSueldoBase(int sueldoBase) {
+        this.sueldoBase = sueldoBase;
+    }
+
+    public int getSueldoPrima() {
+        return sueldoPrima;
+    }
+
+    public void setSueldoPrima(int sueldoPrima) {
+        this.sueldoPrima = sueldoPrima;
     }
 }

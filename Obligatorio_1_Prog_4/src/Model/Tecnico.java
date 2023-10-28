@@ -6,7 +6,8 @@ public class Tecnico extends Persona{
     private int id;
     private Equipo equipo;
     private int partidosGanados;
-    private int sueldo;
+    private int sueldoBase=800000;
+    private int sueldoPrima;
     private static ArrayList<Tecnico> ListaTecnico = new ArrayList<>();
 
     //Id
@@ -15,21 +16,6 @@ public class Tecnico extends Persona{
     }
     public void setId(int id) {
         this.id = id;
-    }
-    public int getPartidosGanados() {
-        return partidosGanados;
-    }
-
-    public void setPartidosGanados(int partidosGanados) {
-        this.partidosGanados = partidosGanados;
-    }
-
-    public int getSueldo() {
-        return sueldo;
-    }
-
-    public void setSueldo(int sueldo) {
-        this.sueldo = sueldo;
     }
 
     //Lista Tecnicos
@@ -52,11 +38,34 @@ public class Tecnico extends Persona{
     }
 
     //Constructor
-    public Tecnico(int ci, String nombre, String apellido, Equipo equipo, int partidosGanados, int sueldo){
+    public Tecnico(int ci, String nombre, String apellido, Equipo equipo, int partidosGanados){
         super(ci, nombre, apellido);
         this.equipo=equipo;
         this.partidosGanados=partidosGanados;
-        this.sueldo=sueldo;
     }
 
+
+    public int getPartidosGanados() {
+        return partidosGanados;
+    }
+
+    public void setPartidosGanados(int partidosGanados) {
+        this.partidosGanados = partidosGanados;
+    }
+
+    public int getSueldoBase() {
+        return sueldoBase;
+    }
+
+    public void setSueldoBase(int sueldoBase) {
+        this.sueldoBase = sueldoBase;
+    }
+
+    public int getSueldoPrima() {
+        return sueldoPrima;
+    }
+
+    public void setSueldoPrima(int sueldoPrima) {
+        this.sueldoPrima = sueldoPrima;
+    }
 }

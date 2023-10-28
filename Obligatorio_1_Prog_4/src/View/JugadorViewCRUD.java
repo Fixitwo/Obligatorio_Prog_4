@@ -17,7 +17,6 @@ public class JugadorViewCRUD {
         String apellido;
         int pos;
         int cantMinJug;
-        int sueldo;
 
         while (true) {
             try {
@@ -44,11 +43,7 @@ public class JugadorViewCRUD {
                 Scanner e = new Scanner(System.in);
                 cantMinJug = e.nextInt();
 
-                System.out.println("\nSueldo: ");
-                Scanner f = new Scanner(System.in);
-                sueldo = f.nextInt();
-
-                Jugador unJ = new Jugador(ci, nombre, apellido, pos, cantMinJug,sueldo);
+                Jugador unJ = new Jugador(ci, nombre, apellido, pos, cantMinJug);
 
                 System.out.println("Esta de acuardo con estos datos? (1:no|0:si)");
                 Scanner s = new Scanner(System.in);
@@ -93,7 +88,6 @@ public class JugadorViewCRUD {
         String apellido;
         int pos;
         int cantMinJug;
-        int sueldo;
         Scanner s = new Scanner(System.in);
 
         while (true) {
@@ -126,11 +120,7 @@ public class JugadorViewCRUD {
                 Scanner e = new Scanner(System.in);
                 cantMinJug = e.nextInt();
 
-                System.out.println("\nSueldo: ");
-                Scanner f = new Scanner(System.in);
-                sueldo = f.nextInt();
-
-                Jugador unA = new Jugador(ci, nombre, apellido, pos,cantMinJug, sueldo);
+                Jugador unA = new Jugador(ci, nombre, apellido, pos,cantMinJug);
 
                 System.out.println("Esta de acuardo con los datos? (1:no|0:si)");
                 int salir = s.nextInt();
