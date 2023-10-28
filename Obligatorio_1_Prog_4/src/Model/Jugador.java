@@ -7,6 +7,7 @@ public class Jugador extends Persona{
     private int id;
     private int pos;
     private int cantMinJug;
+    private int sueldo;
     private static ArrayList<Jugador> ListaJugadores = new ArrayList<>();
 
     //Metodos de Acceso

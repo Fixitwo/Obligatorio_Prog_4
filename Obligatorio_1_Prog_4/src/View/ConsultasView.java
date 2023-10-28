@@ -22,7 +22,9 @@ public class ConsultasView {
         }catch (Exception e){
             System.out.println("Comando no conocido" + e);
         }
-
-
     }
+    public static void calculoSueldoJugador(){}
+    public static void calculoSueldoTecnico(){}
+    public static void calculoSueldoArbitro(){}
+
 }

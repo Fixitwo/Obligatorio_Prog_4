@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Tecnico extends Persona{
     private int id;
     private Equipo equipo;
+    private int partidosGanados;
+    private int sueldo;
     private static ArrayList<Tecnico> ListaTecnico = new ArrayList<>();
 
     //Id
@@ -35,10 +37,27 @@ public class Tecnico extends Persona{
     }
 
     //Constructor
-    public Tecnico(int ci, String nombre, String apellido, Equipo equipo){
+    public Tecnico(int ci, String nombre, String apellido, Equipo equipo, int partidosGanados, int sueldo){
         super(ci, nombre, apellido);
         this.equipo=equipo;
+        this.partidosGanados=partidosGanados;
+        this.sueldo=sueldo;
     }
 
 
+    public int getPartidosGanados() {
+        return partidosGanados;
+    }
+
+    public void setPartidosGanados(int partidosGanados) {
+        this.partidosGanados = partidosGanados;
+    }
+
+    public int getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(int sueldo) {
+        this.sueldo = sueldo;
+    }
 }
