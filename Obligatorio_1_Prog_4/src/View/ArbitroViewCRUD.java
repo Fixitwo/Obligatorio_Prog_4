@@ -11,6 +11,8 @@ public class ArbitroViewCRUD {
         String nombre;
         String apellido;
         int cantPartDir;
+        int aniosTrabaj;
+        int sueldo;
 
 
         while (true) {
@@ -33,7 +35,15 @@ public class ArbitroViewCRUD {
                 Scanner d = new Scanner(System.in);
                 cantPartDir = d.nextInt();
 
-                Arbitro unA = new Arbitro(ci, nombre, apellido, cantPartDir);
+                System.out.println("\nCantidad de años trabajados: ");
+                Scanner e = new Scanner(System.in);
+                aniosTrabaj = e.nextInt();
+
+                System.out.println("\nCantidad de años trabajados: ");
+                Scanner f = new Scanner(System.in);
+                sueldo = f.nextInt();
+
+                Arbitro unA = new Arbitro(ci, nombre, apellido, cantPartDir,aniosTrabaj,sueldo);
 
                 System.out.println("Esta de acuardo con estos datos? (1:no|0:si)");
                 Scanner s = new Scanner(System.in);
@@ -78,6 +88,8 @@ public class ArbitroViewCRUD {
         String nombre;
         String apellido;
         int cantPartDir;
+        int aniosTrabaj;
+        int sueldo;
         Scanner s = new Scanner(System.in);
 
         while (true) {
@@ -106,7 +118,15 @@ public class ArbitroViewCRUD {
                 Scanner d = new Scanner(System.in);
                 cantPartDir = d.nextInt();
 
-                Arbitro unA = new Arbitro(newCi, nombre, apellido, cantPartDir);
+                System.out.println("\nCantidad de años trabajados: ");
+                Scanner e = new Scanner(System.in);
+                aniosTrabaj = e.nextInt();
+
+                System.out.println("\nCantidad de partidos dirigidos: ");
+                Scanner f = new Scanner(System.in);
+                sueldo = f.nextInt();
+
+                Arbitro unA = new Arbitro(newCi, nombre, apellido, cantPartDir, aniosTrabaj, sueldo);
 
                 System.out.println("Esta de acuardo con los datos? (1:no|0:si)");
                 int salir = s.nextInt();

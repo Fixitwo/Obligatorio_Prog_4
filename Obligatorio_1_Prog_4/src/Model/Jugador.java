@@ -38,6 +38,13 @@ public class Jugador extends Persona{
     public void setPos(int pos){
         this.pos=pos;
     }
+    public int getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(int sueldo) {
+        this.sueldo = sueldo;
+    }
 
     //Cantidad minutos jugados
     public int getCantMinJug(){
@@ -48,11 +55,10 @@ public class Jugador extends Persona{
     }
 
     //Constructor
-    public Jugador(int ci, String nombre, String apellido, int pos, int cantMinJug){
+    public Jugador(int ci, String nombre, String apellido, int pos, int cantMinJug,int sueldo){
         super(ci, nombre, apellido);
         this.pos=pos;
         this.cantMinJug=cantMinJug;
+        this.sueldo=sueldo;
     }
-
-
 }

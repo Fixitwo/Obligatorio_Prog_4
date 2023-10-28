@@ -15,6 +15,8 @@ public class TecnicoViewCRUD {
         int ci;
         String nombre;
         String apellido;
+        int partidosGanados;
+        int sueldo;
         Equipo equipo;
 
         while (true) {
@@ -34,7 +36,15 @@ public class TecnicoViewCRUD {
                 Scanner c = new Scanner(System.in);
                 apellido = c.nextLine();
 
-                Tecnico unT=new Tecnico(ci, nombre,apellido, null);
+                System.out.println("\nCantidad de partidos ganados: ");
+                Scanner d = new Scanner(System.in);
+                partidosGanados = d.nextInt();
+
+                System.out.println("\nSueldo: ");
+                Scanner e = new Scanner(System.in);
+                sueldo = e.nextInt();
+
+                Tecnico unT=new Tecnico(ci, nombre,apellido, null, partidosGanados,sueldo);
 
                 System.out.println("Esta de acuardo con estos datos? (1:no|0:si)");
                 Scanner s = new Scanner(System.in);
@@ -75,6 +85,8 @@ public class TecnicoViewCRUD {
         int ci;
         String nombre;
         String apellido;
+        int partidosGanados;
+        int sueldo;
         Equipo equipo;
         int id;
 
@@ -102,7 +114,15 @@ public class TecnicoViewCRUD {
                 Scanner ap = new Scanner(System.in);
                 apellido = ap.nextLine();
 
-                Tecnico unT = new Tecnico(ci, nombre, apellido, null);
+                System.out.println("\nCantidad de partidos ganados: ");
+                Scanner pg = new Scanner(System.in);
+                partidosGanados = pg.nextInt();
+
+                System.out.println("\nSueldo: ");
+                Scanner su = new Scanner(System.in);
+                sueldo = su.nextInt();
+
+                Tecnico unT = new Tecnico(ci, nombre, apellido, null,partidosGanados,sueldo);
 
                 System.out.println("Esta de acuardo con los datos? (1:no|0:si)");
                 int salir = s.nextInt();

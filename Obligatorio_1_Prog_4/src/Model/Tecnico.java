@@ -16,6 +16,21 @@ public class Tecnico extends Persona{
     public void setId(int id) {
         this.id = id;
     }
+    public int getPartidosGanados() {
+        return partidosGanados;
+    }
+
+    public void setPartidosGanados(int partidosGanados) {
+        this.partidosGanados = partidosGanados;
+    }
+
+    public int getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(int sueldo) {
+        this.sueldo = sueldo;
+    }
 
     //Lista Tecnicos
     public static ArrayList<Tecnico> getListaTecnico(){
@@ -44,20 +59,4 @@ public class Tecnico extends Persona{
         this.sueldo=sueldo;
     }
 
-
-    public int getPartidosGanados() {
-        return partidosGanados;
-    }
-
-    public void setPartidosGanados(int partidosGanados) {
-        this.partidosGanados = partidosGanados;
-    }
-
-    public int getSueldo() {
-        return sueldo;
-    }
-
-    public void setSueldo(int sueldo) {
-        this.sueldo = sueldo;
-    }
 }
