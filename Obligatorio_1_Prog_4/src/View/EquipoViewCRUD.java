@@ -16,6 +16,9 @@ public class EquipoViewCRUD {
         while (true) {
             System.out.println("Creacion de un Equipo ");
             try {
+                if(JugadorController.noHayJugador()){
+                    break;
+                }
                 System.out.println("\nNombre: ");
                 Scanner b = new Scanner(System.in);
                 nombre = b.nextLine();
@@ -44,10 +47,13 @@ public class EquipoViewCRUD {
         int id;
         Scanner s = new Scanner(System.in);
         while (true){
+            if(JugadorController.noHayJugador()){
+                break;
+            }
             System.out.println("Equipos:\n");
             EquipoController.leer();
             try {
-                System.out.println("Escribra el numero del Equipo a eliminar ");
+                System.out.println("Escribra el numero del Equipo a eliminar o una letra para salir");
                 id = s.nextInt();
 
                 System.out.println("Esta de acuerdo con eliminar este Equipo? (1:no|0:si)");
@@ -57,7 +63,8 @@ public class EquipoViewCRUD {
                     break;
                 }
             }catch (Exception e){
-                System.out.println("Error al eliminar, incerte de nuevo los datos  "+e);
+                System.out.println("Saliendo");
+                break;
             }
 
         }
@@ -68,13 +75,15 @@ public class EquipoViewCRUD {
         Scanner s = new Scanner(System.in);
 
         while (true) {
+            if(JugadorController.noHayJugador()){
+                break;
+            }
             System.out.println("Equipo:\n");
             EquipoController.leer();
             try {
-                System.out.println("Escribra la id del Equipo a modificar ");
+                System.out.println("Escribra la id del Equipo a modificar o una letra para salir");
                 Scanner a = new Scanner(System.in);
                 id = a.nextInt();
-
                 System.out.println("Esta modificando el Equipo");
 
                 System.out.println("\nNombre: ");
@@ -91,7 +100,8 @@ public class EquipoViewCRUD {
                 }
 
             } catch (Exception e) {
-                System.out.println("Error al crear, incerte de nuevo los datos " + e);
+                System.out.println("Saliendo");
+                break;
             }
         }
     }
@@ -115,13 +125,13 @@ public class EquipoViewCRUD {
     }
     private static void elegirJugadores(Equipo unE){
         while (true){
-
+            MenuView.consoleClear();
             System.out.println("Elegir jugadores para el equipo");
             JugadorController.leer();
             try{
                 Scanner u = new Scanner(System.in);
                 int idJugador = u.nextInt();
-                EquipoController.altaJugador(idJugador,unE);
+                System.out.println(EquipoController.altaJugador(idJugador,unE));
 
                 System.out.println("jugadores en el equipo ");
                 EquipoController.leerJugador(unE);
@@ -139,13 +149,13 @@ public class EquipoViewCRUD {
     }
     private static void elegirSuplentes(Equipo unE){
         while (true){
-
+            MenuView.consoleClear();
             System.out.println("Elegir Suplentes para el equipo");
             JugadorController.leer();
             try{
                 Scanner u = new Scanner(System.in);
                 int idJugador = u.nextInt();
-                EquipoController.altaSuplentes(idJugador,unE);
+                System.out.println(EquipoController.altaSuplentes(idJugador,unE));
 
                 System.out.println("Suplentes en el equipo ");
                 EquipoController.leerSuplentes(unE);
@@ -182,4 +192,6 @@ public class EquipoViewCRUD {
             }
         }
     }
+
+
 }

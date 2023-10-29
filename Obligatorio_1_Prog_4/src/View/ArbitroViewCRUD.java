@@ -1,6 +1,7 @@
 package View;
 
 import Controller.ArbitroController;
+import Controller.JugadorController;
 import Model.Arbitro;
 
 import java.util.Scanner;
@@ -11,7 +12,7 @@ public class ArbitroViewCRUD {
         String nombre;
         String apellido;
         int cantPartDir;
-        int aniosTrabj
+        int aniosTrabj;
 
         while (true) {
             try {
@@ -54,30 +55,32 @@ public class ArbitroViewCRUD {
         }
     }
     public static void BajaView(){
-        int ci;
+        int id;
         Scanner s = new Scanner(System.in);
         while (true){
+            if(ArbitroController.noHayArbitro()){
+                break;
+            }
             System.out.println("Arbitros:\n");
             ArbitroController.leer();
             try {
-                System.out.println("Escribra la cedula del arbitro a eliminar ");
-                ci = s.nextInt();
+                System.out.println("Escribra la id del arbitro a eliminar o una letra para salir");
+                id = s.nextInt();
 
                 System.out.println("Esta de acuerdo con eliminar este Arbitro? (1:no|0:si)");
                 int salir = s.nextInt();
                 if(salir == 0){
-                    ArbitroController.baja(ci);
+                    ArbitroController.baja(id);
                     break;
                 }
             }catch (Exception e){
-                System.out.println("Error al eliminar, incerte de nuevo los datos  "+e);
+                System.out.println("Saliendo");
+                break;
             }
-
         }
-
     }
     public static void ModificarView(){
-        int ci;
+        int id;
         int newCi;
         String nombre;
         String apellido;
@@ -86,12 +89,15 @@ public class ArbitroViewCRUD {
         Scanner s = new Scanner(System.in);
 
         while (true) {
+            if(ArbitroController.noHayArbitro()){
+                break;
+            }
             System.out.println("Arbitros:\n");
             ArbitroController.leer();
             try {
-                System.out.println("Escribra la cedula del arbitro a modificar ");
+                System.out.println("Escribra la id del arbitro a modificar o una letra para salir");
                 Scanner a = new Scanner(System.in);
-                ci = a.nextInt();
+                id = a.nextInt();
 
                 System.out.println("Esta modificando el ARBITRO");
 
@@ -120,12 +126,13 @@ public class ArbitroViewCRUD {
                 System.out.println("Esta de acuardo con los datos? (1:no|0:si)");
                 int salir = s.nextInt();
                 if(salir == 0){
-                    ArbitroController.modificar(ArbitroController.Encontrar(ci),unA);
+                    ArbitroController.modificar(ArbitroController.Encontrar(id),unA);
                     break;
                 }
 
             } catch (Exception e) {
-                System.out.println("Error al crear, incerte de nuevo los datos "+ e);
+                System.out.println("Saliendo");
+                break;
             }
         }
     }

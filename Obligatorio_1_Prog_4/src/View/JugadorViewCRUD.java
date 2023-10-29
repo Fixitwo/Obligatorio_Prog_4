@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class JugadorViewCRUD {
     public static void AltaView(){
-
+        int id;
         int ci;
         String nombre;
         String apellido;
@@ -63,10 +63,13 @@ public class JugadorViewCRUD {
         int id;
         Scanner s = new Scanner(System.in);
         while (true) {
+            if(JugadorController.noHayJugador()){
+                break;
+            }
             System.out.println("Jugadores:\n");
             JugadorController.leer();
             try {
-                System.out.println("Escribra el numero del Jugador a eliminar ");
+                System.out.println("Escribra el numero del Jugador a eliminar o una letra para salir");
                 id = s.nextInt();
 
                 System.out.println("Esta de acuerdo con eliminar este Jugador? (1:no|0:si)");
@@ -76,7 +79,8 @@ public class JugadorViewCRUD {
                     break;
                 }
             } catch (Exception e) {
-                System.out.println("Error al eliminar, incerte de nuevo los datos  " + e);
+                System.out.println("Saliendo");
+                break;
             }
         }
     }
@@ -91,10 +95,13 @@ public class JugadorViewCRUD {
         Scanner s = new Scanner(System.in);
 
         while (true) {
+            if(JugadorController.noHayJugador()){
+                break;
+            }
             System.out.println("Jugador:\n");
             JugadorController.leer();
             try {
-                System.out.println("Escribra la id del Jugador a modificar ");
+                System.out.println("Escribra la id del Jugador a modificar o una letra para salir");
                 Scanner a = new Scanner(System.in);
                 id = a.nextInt();
 
@@ -130,7 +137,8 @@ public class JugadorViewCRUD {
                 }
 
             } catch (Exception e) {
-                System.out.println("Error al crear, incerte de nuevo los datos " + e);
+                System.out.println("Saliendo");
+                break;
             }
         }
     }

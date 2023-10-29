@@ -54,4 +54,11 @@ public class TecnicoController {
             }
         }
     }
+
+    public static boolean noHayTecnico(){
+        ArrayList<Tecnico> lista = Tecnico.getListaTecnico();
+        if (lista.size()==0)
+            return true;
+        return false;
+    }
 }

@@ -31,14 +31,14 @@ public class JugadorController {
         ArrayList<Jugador> lista = Jugador.getListaJugador();
 
         for (Jugador a : lista) {
-            System.out.println(a.getId()+" "+ a.getNombre());
+            System.out.println(a.getJugador());
         }
     }
     public static void leerConsulta(){
         ArrayList<Jugador> lista = Jugador.getListaJugador();
 
         for (Jugador a : lista) {
-            System.out.println(a.getId()+ " " + a.getCi() +" "+ a.getNombre() + " " + a.getApellido() + " " + a.getPos() +" " + a.getCantMinJug());
+            System.out.println(a.getJugador());
         }
     }
     public static Jugador Encontrar(int id){
@@ -50,5 +50,11 @@ public class JugadorController {
             }
         }
         return null;
+    }
+    public static boolean noHayJugador(){
+        ArrayList<Jugador> lista = Jugador.getListaJugador();
+        if (lista.size()==0)
+            return true;
+        return false;
     }
 }

@@ -8,10 +8,15 @@ public class Jugador extends Persona{
     private int pos;
     private int cantMinJug;
     private int sueldoBase=1000000;
-    private int sueldoPrima;
+    private double sueldoPrima;
     private static ArrayList<Jugador> ListaJugadores = new ArrayList<>();
 
     //Metodos de Acceso
+
+    //jugador
+    public String getJugador(){
+        return this.getId()+ " CI: " + this.getCi() +" Nombre: "+ this.getNombre() + " Apellido: " + this.getApellido() + " Posicion: " + this.getPos() +" minJugados: " + this.getCantMinJug();
+    }
 
     //id
     public int getId() {
@@ -64,11 +69,11 @@ public class Jugador extends Persona{
         this.sueldoBase = sueldoBase;
     }
 
-    public int getSueldoPrima() {
+    public double getSueldoPrima() {
         return sueldoPrima;
     }
 
-    public void setSueldoPrima(int sueldoPrima) {
+    public void setSueldoPrima(double sueldoPrima) {
         this.sueldoPrima = sueldoPrima;
     }
 }

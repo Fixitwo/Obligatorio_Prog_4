@@ -3,10 +3,11 @@ package Model;
 import java.util.ArrayList;
 
 public class Arbitro extends Persona{
+    private int id;
     private int cantPartDir;
     private int aniosTrabj;
     private int sueldoBase=50000;
-    private int sueldoPrima;
+    private double sueldoPrima;
     private static ArrayList<Arbitro> ListaArbitro = new ArrayList<>();
 
 
@@ -57,11 +58,19 @@ public class Arbitro extends Persona{
         this.sueldoBase = sueldoBase;
     }
 
-    public int getSueldoPrima() {
+    public double getSueldoPrima() {
         return sueldoPrima;
     }
 
-    public void setSueldoPrima(int sueldoPrima) {
+    public void setSueldoPrima(double sueldoPrima) {
         this.sueldoPrima = sueldoPrima;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -44,4 +44,10 @@ public class PartidoController {
             }
             return null;
         }
+    public static boolean noHayPartido(){
+        ArrayList<Partido> lista = Partido.getListaPartido();
+        if (lista.size()==0)
+            return true;
+        return false;
+    }
 }

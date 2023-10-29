@@ -24,24 +24,29 @@ public class PartidoViewCRUD {
 
         while (true) {
             try {
+                if(EquipoController.noHayEquipo() ){
+                    break;
+                }else if(ArbitroController.noHayArbitro()){
+                    break;
+                }
+
                 System.out.println("Creacion de un Partido ");
 
-
-                System.out.println("Dia:");
+                System.out.println("Dia: 00");
                 Scanner a = new Scanner(System.in);
                 String dia = a.nextLine();
 
-                System.out.println("Mes:");
+                System.out.println("Mes: 00");
                 Scanner c = new Scanner(System.in);
                 String mes = c.nextLine();
 
-                System.out.println("Anio:");
+                System.out.println("Anio: 0000");
                 Scanner e = new Scanner(System.in);
                 String anio = e.nextLine();
 
                 System.out.println("Hora: 00:00");
                 Scanner h = new Scanner(System.in);
-                String hora = e.nextLine();
+                String hora = h.nextLine();
 
                 fechaPartido = LocalDate.parse(anio+"-"+mes+"-"+dia);
 
@@ -59,14 +64,14 @@ public class PartidoViewCRUD {
                     break;
                 }
             } catch (Exception e) {
-                System.out.println("Error al crear, incerte de nuevo los datos ");
+                System.out.println("Error al crear, incerte de nuevo los datos "+e);
             }
         }
     }
     private static void elegirEquipo(Partido unP){
         while (true){
 
-            System.out.println("Elegir el equipo que jugaran en el partido");
+            System.out.println("Elegir el primer equipo que jugara en el partido");
             EquipoController.leer();
             try{
                 Scanner u = new Scanner(System.in);
@@ -77,8 +82,14 @@ public class PartidoViewCRUD {
 
                 Scanner h = new Scanner(System.in);
                 int idEquipo2 = h.nextInt();
+                if(idEquipo ==idEquipo2){
+                    throw new Exception("los equipos no pueden ser los mismos");
+                }
                 unP.setEquipoPartido(EquipoController.Encontrar(idEquipo2));
 
+                if(unP.getEquipoPartido().length() <2){
+                    break;
+                }
                 System.out.println("Esta de acuerdo con los datos ingresados? (1:no|0:si)");
                 Scanner s = new Scanner(System.in);
                 int sali = s.nextInt();
@@ -86,7 +97,7 @@ public class PartidoViewCRUD {
                     break;
                 }
             }catch (Exception e){
-                System.out.println("Error al crear, incerte de nuevo los datos "+ e);
+                System.out.println("Error al crear, incerte de nuevo los datos "+ e.getMessage());
             }
         }
     }
@@ -95,10 +106,15 @@ public class PartidoViewCRUD {
         int id;
         Scanner s = new Scanner(System.in);
         while (true){
+            if(EquipoController.noHayEquipo()){
+                break;
+            }else if(ArbitroController.noHayArbitro()){
+                break;
+            }
             System.out.println("Partido:\n");
             PartidoController.leer();
             try {
-                System.out.println("Escribra el numero del partido a eliminar ");
+                System.out.println("Escribra el numero del partido a eliminar o una letra para salir");
                 id = s.nextInt();
 
                 System.out.println("Esta de acuerdo con eliminar este Partido? (1:no|0:si)");
@@ -108,7 +124,8 @@ public class PartidoViewCRUD {
                     break;
                 }
             }catch (Exception e){
-                System.out.println("Error al eliminar, incerte de nuevo los datos  "+e);
+                System.out.println("Saliendo");
+                break;
             }
         }
     }
@@ -122,30 +139,35 @@ public class PartidoViewCRUD {
         Scanner s = new Scanner(System.in);
 
         while (true) {
+            if(EquipoController.noHayEquipo()){
+                break;
+            }else if(ArbitroController.noHayArbitro()){
+                break;
+            }
             System.out.println("Partido:\n");
             TecnicoController.leer();
             try {
-                System.out.println("Escribra la id del Partido a modificar ");
+                System.out.println("Escribra la id del Partido a modificar o una letra para salir");
                 Scanner a = new Scanner(System.in);
                 id = a.nextInt();
 
                 System.out.println("Esta modificando el Partido");
 
-                System.out.println("Dia:");
+                System.out.println("Dia: 00");
                 Scanner z = new Scanner(System.in);
                 String dia = z.nextLine();
 
-                System.out.println("Mes:");
+                System.out.println("Mes: 00");
                 Scanner c = new Scanner(System.in);
                 String mes = c.nextLine();
 
-                System.out.println("Anio:");
+                System.out.println("Anio: 0000");
                 Scanner e = new Scanner(System.in);
                 String anio = e.nextLine();
 
                 System.out.println("Hora: 00:00");
                 Scanner h = new Scanner(System.in);
-                String hora = e.nextLine();
+                String hora = h.nextLine();
 
                 fechaPartido = LocalDate.parse(anio+"-"+mes+"-"+dia);
 
@@ -163,7 +185,8 @@ public class PartidoViewCRUD {
                 }
 
             } catch (Exception e) {
-                System.out.println("Error al crear, incerte de nuevo los datos " + e);
+                System.out.println("Saliendo");
+                break;
             }
         }
     }

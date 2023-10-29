@@ -15,13 +15,11 @@ public class TecnicoViewCRUD {
         int ci;
         String nombre;
         String apellido;
-        Equipo equipo;
         int partidosGanados;
 
         while (true) {
             try {
                 System.out.println("Creacion de un Tecnico ");
-
 
                 System.out.println("\nCedula: ");
                 Scanner a = new Scanner(System.in);
@@ -59,10 +57,13 @@ public class TecnicoViewCRUD {
         int id;
         Scanner s = new Scanner(System.in);
         while (true){
+            if(TecnicoController.noHayTecnico()){
+                break;
+            }
             System.out.println("Tecnico:\n");
             TecnicoController.leer();
             try {
-                System.out.println("Escribra el numero del Tecnico a eliminar ");
+                System.out.println("Escribra el numero del Tecnico a eliminar o una letra para salir");
                 id = s.nextInt();
 
                 System.out.println("Esta de acuerdo con eliminar este Tecnico? (1:no|0:si)");
@@ -72,7 +73,8 @@ public class TecnicoViewCRUD {
                     break;
                 }
             }catch (Exception e){
-                System.out.println("Error al eliminar, incerte de nuevo los datos  "+e);
+                System.out.println("Saliendo");
+                break;
             }
         }
     }
@@ -80,17 +82,19 @@ public class TecnicoViewCRUD {
         int ci;
         String nombre;
         String apellido;
-        Equipo equipo;
         int partidosGanados;
         int id;
 
         Scanner s = new Scanner(System.in);
 
         while (true) {
+            if(TecnicoController.noHayTecnico()){
+                break;
+            }
             System.out.println("Tecnico:\n");
             TecnicoController.leer();
             try {
-                System.out.println("Escribra la id del Tecnico a modificar ");
+                System.out.println("Escribra la id del Tecnico a modificar o una letra para salir");
                 Scanner a = new Scanner(System.in);
                 id = a.nextInt();
 
@@ -123,7 +127,8 @@ public class TecnicoViewCRUD {
                 }
 
             } catch (Exception e) {
-                System.out.println("Error al crear, incerte de nuevo los datos " + e);
+                System.out.println("Saliendo");
+                break;
             }
         }
     }
@@ -132,8 +137,11 @@ public class TecnicoViewCRUD {
     private static void elegirEquipo(Tecnico unT){
         while (true){
 
+            if(!EquipoController.leer()){
+                System.out.println("No hay equipos ");
+                break;
+            }
             System.out.println("Elegir el equipo que dirigira el Tecnico");
-            EquipoController.leer();
             try{
                 Scanner u = new Scanner(System.in);
                 int idEquipo = u.nextInt();

@@ -53,9 +53,13 @@ public class Partido {
 
     //Leer
     public String getPartido(){
-        return "Fecha de partido: "+this.getFechaPartido() + "\nHORA: "+ this.getHoraPartido()
-                +"\nARBITRO: "+ this.getArbitroPartido().getNombre() + " "
-                + this.getArbitroPartido().getApellido() +"\nPARTIDO: "+ this.getEquipoPartido();
+        if(this.getArbitroPartido() !=null){
+            return "Fecha de partido: "+this.getFechaPartido() + "\nHORA: "+ this.getHoraPartido()
+                    +"\nARBITRO: "+ this.getArbitroPartido().getNombre() + " "
+                    + this.getArbitroPartido().getApellido() +"\nPARTIDO: "+ this.getEquipoPartido();
+        }
+        return "Fecha de partido: "+this.getFechaPartido() + "\nHORA: "+ this.getHoraPartido() +"\nPARTIDO: "+ this.getEquipoPartido();
+
     }
 
     public static ArrayList<Partido> getListaPartido(){

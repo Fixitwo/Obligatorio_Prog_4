@@ -7,7 +7,7 @@ public class Tecnico extends Persona{
     private Equipo equipo;
     private int partidosGanados;
     private int sueldoBase=800000;
-    private int sueldoPrima;
+    private double sueldoPrima;
     private static ArrayList<Tecnico> ListaTecnico = new ArrayList<>();
 
     //Id
@@ -61,11 +61,11 @@ public class Tecnico extends Persona{
         this.sueldoBase = sueldoBase;
     }
 
-    public int getSueldoPrima() {
+    public double getSueldoPrima() {
         return sueldoPrima;
     }
 
-    public void setSueldoPrima(int sueldoPrima) {
+    public void setSueldoPrima(double sueldoPrima) {
         this.sueldoPrima = sueldoPrima;
     }
 }
